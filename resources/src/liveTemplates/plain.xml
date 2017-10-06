@@ -22,6 +22,15 @@
       <option name="GROOVY_DECLARATION" value="true" />
     </context>
   </template>
+  <template resource-bundle="messages.CodeInsightBundle" key="livetemplate.description.prf"
+            name="prf" toReformat="false" toShortenFQNames="false" value="private final ">
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="GROOVY" value="false" />
+      <option name="GROOVY_DECLARATION" value="true" />
+    </context>
+  </template>
   <template resource-bundle="messages.CodeInsightBundle" key="livetemplate.description.prsf"
             name="prsf" toReformat="false" toShortenFQNames="false" value="private static final ">
     <context>
