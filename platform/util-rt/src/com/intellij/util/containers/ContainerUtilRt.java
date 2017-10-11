@@ -331,12 +331,76 @@ public class ContainerUtilRt {
     }
   }
 
+  private static class EmptySet<T> extends AbstractSet<T> implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private static final EmptySet INSTANCE = new EmptySet();
+
+    public Iterator<T> iterator() {
+      return EmptyIterator.getInstance();
+    }
+
+    public int size() {
+      return 0;
+    }
+
+    public boolean contains(Object obj) {
+      return false;
+    }
+
+    @Override
+    public Object[] toArray() {
+      return ArrayUtilRt.EMPTY_OBJECT_ARRAY;
+    }
+
+    public <E> E[] toArray(E[] a) {
+      if (a.length > 0)
+        a[0] = null;
+      return a;
+    }
+
+    public boolean isEmpty() {
+      return true;
+    }
+
+    @Override
+    public boolean containsAll(Collection<?> c) {
+      return c.isEmpty();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      return o instanceof Set && ((Set)o).isEmpty();
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public boolean removeAll(Collection<?> c) {
+      return false;
+    }
+
+    @Override
+    public boolean retainAll(Collection<?> c) {
+      return false;
+    }
+  }
 
   @NotNull
   @Contract(pure=true)
   public static <T> List<T> emptyList() {
     //noinspection unchecked
     return (List<T>)EmptyList.INSTANCE;
+  }
+
+  @NotNull
+  @Contract(pure=true)
+  public static <T> Set<T> emptySet() {
+    //noinspection unchecked
+    return (Set<T>)EmptySet.INSTANCE;
   }
 
   @NotNull
