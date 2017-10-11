@@ -314,7 +314,23 @@ public class ContainerUtilRt {
     public Iterator<T> iterator() {
       return EmptyIterator.getInstance();
     }
+
+    @Override
+    public ListIterator<T> listIterator() {
+      return EmptyListIterator.getInstance();
+    }
+
+    @Override
+    public ListIterator<T> listIterator(int index) {
+      return EmptyListIterator.getInstance();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      return (o instanceof List) && ((List)o).isEmpty();
+    }
   }
+
 
   @NotNull
   @Contract(pure=true)
