@@ -60,7 +60,7 @@ public class PatternCompilerImpl<T> implements PatternCompiler<T> {
     catch (Exception ex) {
       final Throwable cause = ex.getCause() != null ? ex.getCause() : ex;
       LOG.warn("error processing place: " + displayName + " [" + text + "]", cause);
-      return new LazyPresentablePattern<>(new Node(ERROR_NODE, text, null), Collections.emptySet());
+      return new LazyPresentablePattern<>(new Node(ERROR_NODE, text, null), ContainerUtil.emptySet());
     }
   }
 

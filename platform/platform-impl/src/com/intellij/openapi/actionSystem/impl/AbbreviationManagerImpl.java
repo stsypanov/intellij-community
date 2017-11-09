@@ -20,6 +20,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.RoamingType;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.util.containers.ContainerUtil;
 import gnu.trove.THashMap;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -109,7 +110,7 @@ public class AbbreviationManagerImpl extends AbbreviationManager implements Pers
   public Set<String> getAbbreviations(String actionId) {
     final LinkedHashSet<String> abbreviations = myActionId2Abbreviations.get(actionId);
     if (abbreviations == null) {
-      return Collections.emptySet();
+      return ContainerUtil.emptySet();
     }
     return Collections.unmodifiableSet(abbreviations);
   }

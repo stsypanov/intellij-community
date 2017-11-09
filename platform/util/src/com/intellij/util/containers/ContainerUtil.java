@@ -2401,6 +2401,12 @@ public class ContainerUtil extends ContainerUtilRt {
 
   @NotNull
   @Contract(pure=true)
+  public static <T> Set<T> emptySet() {
+    return ContainerUtilRt.emptySet();
+  }
+
+  @NotNull
+  @Contract(pure=true)
   public static <T> CopyOnWriteArrayList<T> createEmptyCOWList() {
     return ContainerUtilRt.createEmptyCOWList();
   }

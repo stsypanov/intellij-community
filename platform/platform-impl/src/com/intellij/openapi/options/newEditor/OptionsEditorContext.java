@@ -19,6 +19,7 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.MultiValuesMap;
+import com.intellij.util.containers.ContainerUtil;
 import gnu.trove.THashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -133,7 +134,7 @@ public class OptionsEditorContext {
 
   public Collection<Configurable> getChildren(final Configurable parent) {
     Collection<Configurable> result = myParentToChildrenMap.get(parent);
-    return result == null ? Collections.emptySet() : result;
+    return result == null ? ContainerUtil.emptySet() : result;
   }
 
   interface ColleagueAction {

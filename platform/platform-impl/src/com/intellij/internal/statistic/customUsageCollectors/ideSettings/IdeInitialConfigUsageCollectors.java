@@ -22,6 +22,7 @@ import com.intellij.internal.statistic.beans.GroupDescriptor;
 import com.intellij.internal.statistic.beans.UsageDescriptor;
 import com.intellij.internal.statistic.utils.StatisticsUtilKt;
 import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.util.containers.ContainerUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -101,7 +102,7 @@ public final class IdeInitialConfigUsageCollectors {
     protected Set<UsageDescriptor> doGetUsages() {
       final String keymapName = WelcomeWizardUtil.getWizardMacKeymap();
       if (StringUtil.isEmpty(keymapName)) {
-        return Collections.emptySet();
+        return ContainerUtil.emptySet();
       }
       else {
         return Collections.singleton(new UsageDescriptor(keymapName, 1));
@@ -121,7 +122,7 @@ public final class IdeInitialConfigUsageCollectors {
     protected Set<UsageDescriptor> doGetUsages() {
       final String laf = WelcomeWizardUtil.getWizardLAF();
       if (StringUtil.isEmpty(laf)) {
-        return Collections.emptySet();
+        return ContainerUtil.emptySet();
       }
       else {
         return Collections.singleton(new UsageDescriptor(laf, 1));
@@ -146,7 +147,7 @@ public final class IdeInitialConfigUsageCollectors {
     @Override
     public Set<UsageDescriptor> getUsages() throws CollectUsagesException {
       if (!shouldCount()) {
-        return Collections.emptySet();
+        return ContainerUtil.emptySet();
       }
       return doGetUsages();
     }

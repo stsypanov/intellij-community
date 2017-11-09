@@ -15,6 +15,7 @@
  */
 package com.intellij.internal.statistic.customUsageCollectors.ideSettings;
 
+import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.containers.HashSet;
 
 import javax.swing.*;
@@ -23,7 +24,7 @@ import java.util.Set;
 
 public final class IdeInitialConfigButtonUsages {
 
-  public static final Set<String> ALL_PLUGINS_SELECTED = Collections.unmodifiableSet(Collections.emptySet());
+  public static final Set<String> ALL_PLUGINS_SELECTED = Collections.unmodifiableSet(ContainerUtil.emptySet());
 
   private static volatile ConfigImport ourConfigImport = ConfigImport.NO_INIT;
 
@@ -31,7 +32,7 @@ public final class IdeInitialConfigButtonUsages {
 
   private static volatile Set<String> ourPredefinedDisabledPlugins = ALL_PLUGINS_SELECTED;
 
-  private static Set<String> ourDownloadedPlugins = Collections.emptySet();
+  private static Set<String> ourDownloadedPlugins = ContainerUtil.emptySet();
 
   public static ConfigImport getConfigImport() {
     return ourConfigImport;

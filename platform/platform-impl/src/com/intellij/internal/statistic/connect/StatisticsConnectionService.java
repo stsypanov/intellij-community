@@ -55,7 +55,7 @@ public class StatisticsConnectionService extends SettingsConnectionService {
   public Set<String> getDisabledGroups() {
     final String disabledGroupsString = getSettingValue(DISABLED);
     if (disabledGroupsString == null) {
-      return Collections.emptySet();
+      return ContainerUtil.emptySet();
     }
 
     final List<String> disabledGroupsList = StringUtil.split(disabledGroupsString, ",");

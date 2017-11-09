@@ -20,6 +20,7 @@ import com.intellij.internal.statistic.UsagesCollector;
 import com.intellij.internal.statistic.beans.GroupDescriptor;
 import com.intellij.internal.statistic.beans.UsageDescriptor;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.util.containers.ContainerUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -38,7 +39,7 @@ class JdkInfoUsageCollector extends UsagesCollector {
         return Collections.singleton(new UsageDescriptor(vendor + " " + version, 1));
       }
     }
-    return Collections.emptySet();
+    return ContainerUtil.emptySet();
   }
 
   @NotNull

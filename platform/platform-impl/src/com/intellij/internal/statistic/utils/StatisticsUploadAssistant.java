@@ -46,7 +46,7 @@ public class StatisticsUploadAssistant {
   public static final Object LOCK = new Object();
 
   public String getData() {
-    return getData(Collections.emptySet());
+    return getData(ContainerUtil.emptySet());
   }
 
   public static boolean isShouldShowNotification() {

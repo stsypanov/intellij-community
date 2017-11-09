@@ -29,6 +29,7 @@ import com.intellij.ui.mac.foundation.ID;
 import com.intellij.util.Consumer;
 import com.intellij.util.ReflectionUtil;
 import com.intellij.util.concurrency.FutureResult;
+import com.intellij.util.containers.ContainerUtil;
 import com.sun.jna.IntegerType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -446,7 +447,7 @@ public class ClipboardSynchronizer implements Disposable, ApplicationComponent {
       try {
         final long[] formats = (long[])getClipboardFormats.invoke(clipboard);
         if (formats == null || formats.length == 0) {
-          return Collections.emptySet();
+          return ContainerUtil.emptySet();
         }
         @SuppressWarnings({"unchecked"}) final Set<DataFlavor> set = DataTransferer.getInstance().getFlavorsForFormats(formats, FLAVOR_MAP).keySet();
         return set;

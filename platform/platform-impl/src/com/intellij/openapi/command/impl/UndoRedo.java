@@ -16,6 +16,7 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.containers.ContainerUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -56,7 +57,7 @@ abstract class UndoRedo {
   }
 
   private Set<DocumentReference> getDecRefs() {
-    return myEditor == null ? Collections.emptySet() : UndoManagerImpl.getDocumentReferences(myEditor);
+    return myEditor == null ? ContainerUtil.emptySet() : UndoManagerImpl.getDocumentReferences(myEditor);
   }
 
   protected abstract UndoRedoStacksHolder getStackHolder();

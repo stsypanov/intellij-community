@@ -22,6 +22,7 @@ import com.intellij.internal.statistic.beans.GroupDescriptor;
 import com.intellij.internal.statistic.beans.UsageDescriptor;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.util.containers.ContainerUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -38,7 +39,7 @@ public class LaFUsagesCollector extends UsagesCollector {
       key += SystemInfo.SUN_DESKTOP + " - ";
     }
     return laf != null ? Collections.singleton(new UsageDescriptor(key + laf.getName(), 1))
-                       : Collections.emptySet();
+                       : ContainerUtil.emptySet();
   }
 
   @NotNull
