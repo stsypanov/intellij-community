@@ -60,6 +60,20 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess {
     }
   }
 
+  /**
+   * Created for compatibility with {@link ArrayList} to be used instead of it
+   * as superclass for {@link com.intellij.util.containers.Stack}
+   * @param initialCapacity
+   */
+  protected SmartList(int initialCapacity) {
+    if (initialCapacity > 0) {
+      this.myElem = new Object[initialCapacity];
+    }
+    else if (initialCapacity < 0) {
+      throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
+    }
+  }
+
   @Override
   public E get(int index) {
     if (index < 0 || index >= mySize) {
@@ -380,4 +394,13 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess {
     }
     return true;
   }
+
+  @Override
+  public boolean containsAll(Collection<?> c) {
+    if (mySize == 0) {
+      return false;
+    }
+    return super.containsAll(c);
+  }
 }
+//select count(heap.objects('com.intellij.util.SmartList'), " 1 .equals(it.mySize)");
