@@ -22,6 +22,9 @@ import org.junit.Test;
 
 import java.util.*;
 
+import static java.util.Collections.emptyList;
+import static java.util.Collections.emptySet;
+import static java.util.Collections.singleton;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
@@ -365,4 +368,54 @@ public class SmartListTest {
     assertThat(list).isNotEqualTo(new LinkedList<>(Arrays.asList(new Integer(1), new Integer(2), new Integer(3))));
     assertThat(list).isNotEqualTo(Arrays.asList(new Integer(1), new Integer(2), new Integer(3)));
   }
+
+  @Test
+  public void testContainsAllInEmptyList() {
+    List<Integer> list = new SmartList<>();
+
+    boolean contains = list.containsAll(singleton(1));
+    assertThat(contains).isFalse();
+
+    contains = list.containsAll(emptyList());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(emptySet());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(new SmartList<>());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(new ArrayList<>());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(new LinkedList<>());
+    assertThat(contains).isTrue();
+  }
+
+  @Test
+  public void testContainsAllInNonEmptyList() {
+    List<Integer> list = new SmartList<>(1,2);
+
+    boolean contains = list.containsAll(Arrays.asList(1,2));
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(Arrays.asList(2,1));
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(emptyList());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(emptySet());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(new SmartList<>());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(new ArrayList<>());
+    assertThat(contains).isTrue();
+
+    contains = list.containsAll(new LinkedList<>());
+    assertThat(contains).isTrue();
+  }
+
 }

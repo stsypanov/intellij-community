@@ -34,6 +34,30 @@ public class HashMap<K, V> extends java.util.HashMap<K, V> {
   }
 
   @Override
+  public boolean containsKey(Object key) {
+    if (size() == 0) return false;
+    return super.containsKey(key);
+  }
+
+  @Override
+  public boolean containsValue(Object value) {
+    if (size() == 0) return false;
+    return super.containsValue(value);
+  }
+
+  @Override
+  public V get(Object key) {
+    if (size() == 0) return null;
+    return super.get(key);
+  }
+
+  @Override
+  public V remove(Object key) {
+    if (size() == 0) return null;
+    return super.remove(key);
+  }
+
+  @Override
   public void clear() {
     if (size() == 0) return; // optimization
     super.clear();
