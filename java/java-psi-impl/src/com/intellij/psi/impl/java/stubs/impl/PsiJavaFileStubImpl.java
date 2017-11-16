@@ -97,8 +97,8 @@ public class PsiJavaFileStubImpl extends PsiFileStubImpl<PsiJavaFile> implements
     PsiJavaFileStubImpl stub = (PsiJavaFileStubImpl)o;
 
     if (myCompiled != stub.myCompiled) return false;
-    if (myPackageName != null ? !myPackageName.equals(stub.myPackageName) : stub.myPackageName != null) return false;
     if (myLanguageLevel != stub.myLanguageLevel) return false;
+    if (myPackageName != null ? !myPackageName.equals(stub.myPackageName) : stub.myPackageName != null) return false;
 
     return true;
   }

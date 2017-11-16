@@ -64,7 +64,7 @@ public class CycleFinder<Node> {
     final Set<Node> retainNodes = new HashSet<>(inNodes);
     retainNodes.retainAll(outNodes);
     for (Node node1 : retainNodes) {
-      result.add(ContainerUtil.newArrayList(node1, node));
+      result.add(Arrays.asList(node1, node));
     }
     inNodes.removeAll(retainNodes);
     outNodes.removeAll(retainNodes);

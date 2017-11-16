@@ -121,7 +121,7 @@ public class GitRevisionNumber implements ShortVcsRevisionNumber {
         return 0;
       }
 
-      if ((other.myRevisionHash.indexOf("[") > 0) && (other.myTimestamp != null)) {
+      if ((other.myTimestamp != null) && (other.myRevisionHash.indexOf("[") > 0)) {
         return myTimestamp.compareTo(other.myTimestamp);
       }
 

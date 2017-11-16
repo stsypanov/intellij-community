@@ -48,9 +48,9 @@ public class Descriptor {
   public boolean equals(Object obj) {
     if (!(obj instanceof Descriptor)) return false;
     final Descriptor descriptor = (Descriptor)obj;
-    return myKey.equals(descriptor.getKey()) &&
+    return myEnabled == descriptor.isEnabled() &&
+           myKey.equals(descriptor.getKey()) &&
            myLevel.equals(descriptor.getLevel()) &&
-           myEnabled == descriptor.isEnabled() &&
            myState.equalTo(descriptor.getState());
   }
 

@@ -82,9 +82,9 @@ public class IgnoredFileBean {
 
     IgnoredFileBean that = (IgnoredFileBean)o;
 
+    if (myType != that.myType) return false;
     if (myPath != null ? !myPath.equals(that.myPath) : that.myPath != null) return false;
     if (myMask != null ? !myMask.equals(that.myMask) : that.myMask != null) return false;
-    if (myType != that.myType) return false;
 
     return true;
   }

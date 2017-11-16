@@ -566,7 +566,8 @@ public class JUnitConfiguration extends JavaTestConfigurationBase {
     public boolean equals(final Object object) {
       if (!(object instanceof Data)) return false;
       final Data second = (Data)object;
-      return Comparing.equal(TEST_OBJECT, second.TEST_OBJECT) &&
+      return REPEAT_COUNT == second.REPEAT_COUNT &&
+             Comparing.equal(TEST_OBJECT, second.TEST_OBJECT) &&
              Comparing.equal(getMainClassName(), second.getMainClassName()) &&
              Comparing.equal(getPackageName(), second.getPackageName()) &&
              Comparing.equal(getMethodNameWithSignature(), second.getMethodNameWithSignature()) &&
@@ -578,8 +579,7 @@ public class JUnitConfiguration extends JavaTestConfigurationBase {
              Comparing.equal(DIR_NAME, second.DIR_NAME) &&
              Comparing.equal(CATEGORY_NAME, second.CATEGORY_NAME) &&
              Comparing.equal(UNIQUE_ID, second.UNIQUE_ID) &&
-             Comparing.equal(REPEAT_MODE, second.REPEAT_MODE) &&
-             REPEAT_COUNT == second.REPEAT_COUNT;
+             Comparing.equal(REPEAT_MODE, second.REPEAT_MODE);
     }
 
     public int hashCode() {

@@ -473,9 +473,9 @@ public abstract class PsiAnchor {
       final StubIndexReference that = (StubIndexReference)o;
 
       return myIndex == that.myIndex &&
+             myLanguage == that.myLanguage &&
              myVirtualFile.equals(that.myVirtualFile) &&
-             Comparing.equal(myElementType, that.myElementType) &&
-             myLanguage == that.myLanguage;
+             Comparing.equal(myElementType, that.myElementType);
     }
 
     @Override

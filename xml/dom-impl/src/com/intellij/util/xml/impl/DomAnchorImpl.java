@@ -168,10 +168,10 @@ public abstract class DomAnchorImpl<T extends DomElement> implements DomAnchor<T
 
       final NamedAnchor that = (NamedAnchor)o;
 
+      if (myIndex != that.myIndex) return false;
       if (myDescr != null ? !myDescr.equals(that.myDescr) : that.myDescr != null) return false;
       if (myName != null ? !myName.equals(that.myName) : that.myName != null) return false;
       if (myParent != null ? !myParent.equals(that.myParent) : that.myParent != null) return false;
-      if (myIndex != that.myIndex) return false;
 
       return true;
     }

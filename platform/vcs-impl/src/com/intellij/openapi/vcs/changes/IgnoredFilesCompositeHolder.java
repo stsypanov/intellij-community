@@ -127,7 +127,7 @@ public class IgnoredFilesCompositeHolder implements FileHolder {
       return false;
     }
     IgnoredFilesCompositeHolder other = (IgnoredFilesCompositeHolder)obj;
-    return myVcsIgnoredHolderMap.equals(other.myVcsIgnoredHolderMap) && myIdeIgnoredFilesHolder.equals(other.myIdeIgnoredFilesHolder);
+    return myVcsIgnoredHolderMap.equals(other.myVcsIgnoredHolderMap) && myIdeIgnoredFilesHolder.equals(other.myIdeIgnoredFilesHolder);//todo check size
   }
 
   @Override

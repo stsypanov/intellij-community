@@ -106,9 +106,9 @@ public class ArrangementSectionRule implements Cloneable {
     }
 
     final ArrangementSectionRule section = (ArrangementSectionRule)o;
-    if (!StringUtil.equals(myStartComment, section.myStartComment) ||
-        !StringUtil.equals(myEndComment, section.myEndComment) ||
-        myMatchRules.size() != section.getMatchRules().size()) {
+    if (myMatchRules.size() != section.getMatchRules().size() ||
+        !StringUtil.equals(myStartComment, section.myStartComment) ||
+        !StringUtil.equals(myEndComment, section.myEndComment)) {
       return false;
     }
 

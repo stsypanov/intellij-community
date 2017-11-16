@@ -59,8 +59,8 @@ public final class StandardMethodContract extends MethodContract {
 
     StandardMethodContract contract = (StandardMethodContract)o;
 
-    if (!Arrays.equals(arguments, contract.arguments)) return false;
     if (returnValue != contract.returnValue) return false;
+    if (!Arrays.equals(arguments, contract.arguments)) return false;
 
     return true;
   }

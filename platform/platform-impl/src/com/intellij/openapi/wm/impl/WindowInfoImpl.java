@@ -369,9 +369,7 @@ public final class WindowInfoImpl implements Cloneable, JDOMExternalizable, Wind
     final WindowInfoImpl info=(WindowInfoImpl)obj;
     return myActive == info.myActive &&
            myAnchor == info.myAnchor &&
-           myId.equals(info.myId) &&
            myAutoHide == info.myAutoHide &&
-           Comparing.equal(myFloatingBounds, info.myFloatingBounds) &&
            myInternalType == info.myInternalType &&
            myType == info.myType &&
            myVisible == info.myVisible &&
@@ -380,7 +378,9 @@ public final class WindowInfoImpl implements Cloneable, JDOMExternalizable, Wind
            mySideWeight == info.mySideWeight &&
            myOrder == info.myOrder &&
            mySplitMode == info.mySplitMode &&
-          myContentUiType == info.myContentUiType;
+           myContentUiType == info.myContentUiType &&
+           myId.equals(info.myId) &&
+           Comparing.equal(myFloatingBounds, info.myFloatingBounds);
   }
 
   public int hashCode(){

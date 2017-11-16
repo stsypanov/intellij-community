@@ -62,10 +62,10 @@ public final class VcsRefImpl implements VcsRef {
 
     VcsRefImpl ref = (VcsRefImpl)o;
 
+    if (myType != ref.myType) return false;
     if (!myCommitHash.equals(ref.myCommitHash)) return false;
     if (!myName.equals(ref.myName)) return false;
     if (!myRoot.equals(ref.myRoot)) return false;
-    if (myType != ref.myType) return false;
 
     return true;
   }

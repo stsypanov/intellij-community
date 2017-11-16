@@ -150,9 +150,9 @@ public class JavaProjectData extends AbstractExternalEntityData {
 
     JavaProjectData project = (JavaProjectData)o;
 
-    if (!myCompileOutputPath.equals(project.myCompileOutputPath)) return false;
     if (myJdkVersion != project.myJdkVersion) return false;
     if (myLanguageLevel != project.myLanguageLevel) return false;
+    if (!myCompileOutputPath.equals(project.myCompileOutputPath)) return false;
 
     return true;
   }

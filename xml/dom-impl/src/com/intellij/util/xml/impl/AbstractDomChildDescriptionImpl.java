@@ -76,9 +76,9 @@ public abstract class AbstractDomChildDescriptionImpl implements AbstractDomChil
 
     AbstractDomChildDescriptionImpl that = (AbstractDomChildDescriptionImpl)o;
 
+    if (!getType().equals(that.getType())) return false;
     if (myCustomAnnotations != null ? !myCustomAnnotations.equals(that.myCustomAnnotations) : that.myCustomAnnotations != null)
       return false;
-    if (!getType().equals(that.getType())) return false;
     if (myUserMap != null ? !myUserMap.equals(that.myUserMap) : that.myUserMap != null) return false;
 
     return true;

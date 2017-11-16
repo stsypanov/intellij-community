@@ -110,8 +110,8 @@ class ValuableDataFlowRunner extends DataFlowRunner {
 
       ValuableDfaVariableState state = (ValuableDfaVariableState)o;
 
-      if (!myConcatenation.equals(state.myConcatenation)) return false;
       if (myValue != null ? !myValue.equals(state.myValue) : state.myValue != null) return false;
+      if (!myConcatenation.equals(state.myConcatenation)) return false;
 
       return true;
     }

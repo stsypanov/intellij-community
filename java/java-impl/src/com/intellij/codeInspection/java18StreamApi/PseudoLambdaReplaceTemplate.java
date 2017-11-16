@@ -571,8 +571,8 @@ public class PseudoLambdaReplaceTemplate {
     PseudoLambdaReplaceTemplate template = (PseudoLambdaReplaceTemplate)o;
 
     if (myAcceptDefaultValue != template.myAcceptDefaultValue) return false;
-    if (!myStreamApiMethodName.equals(template.myStreamApiMethodName)) return false;
     if (myLambdaRole != template.myLambdaRole) return false;
+    if (!myStreamApiMethodName.equals(template.myStreamApiMethodName)) return false;
 
     return true;
   }

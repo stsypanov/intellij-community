@@ -229,15 +229,15 @@ public class FontPreferencesImpl extends ModifiableFontPreferences {
 
     FontPreferencesImpl that = (FontPreferencesImpl)o;
 
+    if (myUseLigatures != that.myUseLigatures) return false;
+    if (myLineSpacing != that.myLineSpacing) return false;
+
     if (!myRealFontFamilies.equals(that.myRealFontFamilies)) return false;
     for (String fontFamily : myRealFontFamilies) {
       if (myFontSizes.get(fontFamily) != that.myFontSizes.get(fontFamily)) {
         return false;
       }
     }
-    
-    if (myUseLigatures != that.myUseLigatures) return false;
-    if (myLineSpacing != that.myLineSpacing) return false;
 
     return true;
   }

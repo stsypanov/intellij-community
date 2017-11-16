@@ -60,8 +60,8 @@ public class VcsRootErrorImpl implements VcsRootError {
 
     VcsRootError error = (VcsRootError)o;
 
-    if (!myMapping.equals(error.getMapping())) return false;
     if (myType != error.getType()) return false;
+    if (!myMapping.equals(error.getMapping())) return false;
 
     return true;
   }

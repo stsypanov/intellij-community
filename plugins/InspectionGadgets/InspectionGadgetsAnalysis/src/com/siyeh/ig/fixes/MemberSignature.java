@@ -213,9 +213,9 @@ public class MemberSignature implements Comparable<MemberSignature> {
   public boolean equals(Object object) {
     try {
       final MemberSignature other = (MemberSignature)object;
-      return name.equals(other.name) &&
-             signature.equals(other.signature) &&
-             modifiers == other.modifiers;
+      return modifiers == other.modifiers &&
+             name.equals(other.name) &&
+             signature.equals(other.signature);
     }
     catch (ClassCastException | NullPointerException ignored) {
       return false;

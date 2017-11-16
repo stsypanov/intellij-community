@@ -244,9 +244,9 @@ public class CommonCodeStyleSettingsManager {
           myUnknownSettingsMap.size() != other.myUnknownSettingsMap.size()) {
         return false;
       }
-      for (Language language : myCommonSettingsMap.keySet()) {
-        CommonCodeStyleSettings theseSettings = myCommonSettingsMap.get(language);
-        CommonCodeStyleSettings otherSettings = other.getCommonSettings(language);
+      for (Map.Entry<Language, CommonCodeStyleSettings> entry : myCommonSettingsMap.entrySet()) {
+        CommonCodeStyleSettings theseSettings = entry.getValue();
+        CommonCodeStyleSettings otherSettings = other.getCommonSettings(entry.getKey());
         if (!theseSettings.equals(otherSettings)) return false;
       }
     }

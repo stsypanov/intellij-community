@@ -66,9 +66,9 @@ public class AttributesFlyweight {
       FlyweightKey key = (FlyweightKey)o;
 
       if (fontType != key.fontType) return false;
+      if (effectType != key.effectType) return false;
       if (background != null ? !background.equals(key.background) : key.background != null) return false;
       if (effectColor != null ? !effectColor.equals(key.effectColor) : key.effectColor != null) return false;
-      if (effectType != key.effectType) return false;
       if (errorStripeColor != null ? !errorStripeColor.equals(key.errorStripeColor) : key.errorStripeColor != null) return false;
       if (foreground != null ? !foreground.equals(key.foreground) : key.foreground != null) return false;
 
@@ -281,9 +281,9 @@ public class AttributesFlyweight {
     AttributesFlyweight that = (AttributesFlyweight)o;
 
     if (myFontType != that.myFontType) return false;
+    if (myEffectType != that.myEffectType) return false;
     if (myBackground != null ? !myBackground.equals(that.myBackground) : that.myBackground != null) return false;
     if (myEffectColor != null ? !myEffectColor.equals(that.myEffectColor) : that.myEffectColor != null) return false;
-    if (myEffectType != that.myEffectType) return false;
     if (myErrorStripeColor != null ? !myErrorStripeColor.equals(that.myErrorStripeColor) : that.myErrorStripeColor != null) return false;
     if (myForeground != null ? !myForeground.equals(that.myForeground) : that.myForeground != null) return false;
 

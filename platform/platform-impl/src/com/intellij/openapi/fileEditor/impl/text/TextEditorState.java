@@ -81,8 +81,8 @@ public final class TextEditorState implements FileEditorState {
 
     final TextEditorState textEditorState = (TextEditorState)o;
 
-    if (!Arrays.equals(CARETS, textEditorState.CARETS)) return false;
     if (RELATIVE_CARET_POSITION != textEditorState.RELATIVE_CARET_POSITION) return false;
+    if (!Arrays.equals(CARETS, textEditorState.CARETS)) return false;
     CodeFoldingState localFoldingState = getFoldingState();
     CodeFoldingState theirFoldingState = textEditorState.getFoldingState();
     if (localFoldingState == null ? theirFoldingState != null : !localFoldingState.equals(theirFoldingState)) return false;
